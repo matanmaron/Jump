@@ -9,7 +9,7 @@ public class PlayerInputs : MonoBehaviour
 {
     public AudioClip JumpSFX = null;
     public AudioClip LandSFX = null;
-    
+    public ParticleSystem JumpEffect = null;
     float FallSpeed = 0;
     int JumpSpeed = 15;
     int Speed = 15;
@@ -60,6 +60,7 @@ public class PlayerInputs : MonoBehaviour
 
     private void Jump()
     {
+        JumpEffect.Play();
         audioSource.clip = JumpSFX;
         audioSource.Play();
         rb.velocity += Vector3.up * JumpSpeed;

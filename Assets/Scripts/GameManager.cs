@@ -45,7 +45,8 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         Vector3 pos = new Vector3(Random.Range(-10, 10f), 8, 0);
-        Instantiate(Floors, pos, new Quaternion(), FloorsHolder.transform);
+        var newfloor = Instantiate(Floors, pos, new Quaternion(), FloorsHolder.transform);
+        newfloor.transform.localScale = new Vector3(Random.Range(2f,6f),newfloor.transform.localScale.y, newfloor.transform.localScale.z);
         StartCoroutine(MakeFloor());
     }
 
