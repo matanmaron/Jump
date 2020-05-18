@@ -27,6 +27,10 @@ public class PlayerInputs : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         if (!GameManager.Instance.CanPlay)
         {
             return;
