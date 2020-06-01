@@ -34,7 +34,8 @@ public class UIManager : MonoBehaviour
     public void UpdateLevel(int level)
     {
         LevelText.text = $"Level: {level}";
-    }    
+    }  
+    
     public void UpdateTouch(int touch)
     {
         TouchLevelText.text = $"Touch: {touch}";
