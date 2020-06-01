@@ -28,7 +28,7 @@ public class StartupFloorMove : MonoBehaviour
         if (!touched && collision.gameObject.tag == "Player")
         {
             touched = true;
-            GameManager.Instance.LevelUp();
+            GameManager.Instance.TouchLevelUp();
         }
     }
 }

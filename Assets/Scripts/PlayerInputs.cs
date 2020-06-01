@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class PlayerInputs : MonoBehaviour
 {
@@ -29,13 +30,17 @@ public class PlayerInputs : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            SceneManager.LoadScene("Menu");
         }
         if (!GameManager.Instance.CanPlay)
         {
             return;
         }
         if (isGrounded && Input.GetButtonDown("Jump"))
+        {
+            jumpRequet = true;
+        }
+        if (isGrounded && Input.touchCount > 0)
         {
             jumpRequet = true;
         }
@@ -51,22 +56,40 @@ public class PlayerInputs : MonoBehaviour
         {
             Jump();
         }
-        float moveDirection = Input.GetAxis("Horizontal");
-        if (moveDirection != 0)
-        {
-            rb.AddForce(new Vector2(Speed * moveDirection, 0), ForceMode.Force);
-        }
+        KeyboardMove();
+        MobileMove();
         if (transform.position.y < -6)
         {
             GameManager.Instance.GameOver();
         }
     }
 
+    private void KeyboardMove()
+    {
+        float moveDirection = Input.GetAxis("Horizontal");
+        if (moveDirection != 0)
+        {
+            rb.AddForce(new Vector2(Speed * moveDirection, 0), ForceMode.Force);
+        }
+    }
+
+    private void MobileMove()
+    {
+        Vector3 acc = Input.acceleration;
+        if (acc != Vector3.zero)
+        {
+            rb.AddForce(new Vector2(Speed * acc.x, 0), ForceMode.Force);
+        }
+    }
+
     private void Jump()
     {
-        JumpEffect.Play();
-        audioSource.clip = JumpSFX;
-        audioSource.Play();
+        if (!Settings.MuteSFX)
+        {
+            JumpEffect.Play();
+            audioSource.clip = JumpSFX;
+            audioSource.Play();
+        }
         rb.velocity += Vector3.up * JumpSpeed;
         isGrounded = false;
         jumpRequet = false;
@@ -82,8 +105,11 @@ public class PlayerInputs : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-            audioSource.clip = LandSFX;
-            audioSource.Play();
+            if (!Settings.MuteSFX)
+            {
+                audioSource.clip = LandSFX;
+                audioSource.Play();
+            }
             isGrounded = true;
         }
     }

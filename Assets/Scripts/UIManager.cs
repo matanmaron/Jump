@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI StartUpText;
     public TextMeshProUGUI LevelText;
+    public TextMeshProUGUI TouchLevelText;
 
     void Start()
     {
@@ -33,5 +34,9 @@ public class UIManager : MonoBehaviour
     public void UpdateLevel(int level)
     {
         LevelText.text = $"Level: {level}";
+    }    
+    public void UpdateTouch(int touch)
+    {
+        TouchLevelText.text = $"Touch: {touch}";
     }
 }

@@ -21,7 +21,7 @@ public class FloorMove : MonoBehaviour
         if (!touched && collision.gameObject.tag == "Player")
         {
             touched = true;
-            GameManager.Instance.LevelUp();
+            GameManager.Instance.TouchLevelUp();
         }
     }
 }
