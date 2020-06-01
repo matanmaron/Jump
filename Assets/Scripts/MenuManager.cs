@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,6 +17,23 @@ public class MenuManager : MonoBehaviour
     {
         MenuPanel.SetActive(true);
         SettingsPanel.SetActive(false);
+        DifficultyText.text = Settings.Difficulty.ToString();
+        if (Settings.MuteMusic)
+        {
+            MusicText.text = "Music: OFF";
+        }
+        else
+        {
+            MusicText.text = "Music: ON";
+        }
+        if (Settings.MuteSFX)
+        {
+            SFXText.text = "SFX: OFF";
+        }
+        else
+        {
+            SFXText.text = "SFX: ON";
+        }
     }
 
     public void OnStartButton()
