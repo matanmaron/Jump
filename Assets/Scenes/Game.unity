@@ -360,8 +360,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240425488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.997, y: 8.438, z: -4.1128}
-  m_LocalScale: {x: 1, y: 16, z: 2}
+  m_LocalPosition: {x: -15.997, y: 12.504, z: -4.1128}
+  m_LocalScale: {x: 1, y: 40.924633, z: 2}
   m_Children: []
   m_Father: {fileID: 197687497}
   m_RootOrder: 0
@@ -846,6 +846,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1001,6 +1002,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1115,6 +1117,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1181,12 +1184,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.96, z: -10}
+  m_LocalPosition: {x: 0, y: 0.96, z: -45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b91bf5788685547bd4beb00e80d6e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Celling: {fileID: 2004821847}
 --- !u!1 &1099501832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,8 +1290,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099501832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.003, y: 8.438, z: -4.1128}
-  m_LocalScale: {x: 1, y: 16, z: 2}
+  m_LocalPosition: {x: 10.003, y: 12.989, z: -4.1128}
+  m_LocalScale: {x: 1, y: 39.475452, z: 2}
   m_Children: []
   m_Father: {fileID: 197687497}
   m_RootOrder: 1
@@ -1379,6 +1395,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1942,7 +1959,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004821843}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.997, y: 15.938, z: -4.1128}
+  m_LocalPosition: {x: -2.997, y: 32, z: -4.1128}
   m_LocalScale: {x: 25, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 197687497}

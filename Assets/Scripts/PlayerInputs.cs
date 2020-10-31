@@ -19,6 +19,8 @@ public class PlayerInputs : MonoBehaviour
     bool jumpRequet;
     AudioSource audioSource;
 
+    int deathY = (Screen.width / Screen.height < 1) ? -26 : -6;
+
     void Start()
     {
         StartCoroutine(FallDelay());
@@ -58,7 +60,7 @@ public class PlayerInputs : MonoBehaviour
         }
         KeyboardMove();
         MobileMove();
-        if (transform.position.y < -6)
+        if (transform.position.y < deathY)
         {
             GameManager.Instance.GameOver();
         }

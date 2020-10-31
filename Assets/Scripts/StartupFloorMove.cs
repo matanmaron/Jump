@@ -31,4 +31,12 @@ public class StartupFloorMove : MonoBehaviour
             GameManager.Instance.TouchLevelUp();
         }
     }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (gameObject.name == "Floor"  && collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject, 0.1f);
+        }
+    }
 }
